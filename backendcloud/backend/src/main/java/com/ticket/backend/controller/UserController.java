@@ -73,4 +73,22 @@ public class UserController {
         String password = form.get("password").toString();
         return ResponseEntity.ok(loginService.getToken(userName, password));
     }
+
+    @PutMapping("/users/{userId}/city/")
+    public ResponseEntity<Object> putUserCity(@PathVariable Integer userId, @RequestParam Map<String, Object> form){
+        String newCity = form.get("new_city").toString();
+        return ResponseEntity.ok(userInfoService.putUserCity(userId, newCity));
+    }
+
+    @PutMapping("/users/{userId}/name/")
+    public ResponseEntity<Object> putUserName(@PathVariable Integer userId, @RequestParam Map<String, Object> form){
+        String newName = form.get("new_name").toString();
+        return ResponseEntity.ok(userInfoService.putUserName(userId, newName));
+    }
+
+    @PutMapping("/users/{userId}/avatar/")
+    public ResponseEntity<Object> putUserAvatar(@PathVariable Integer userId,@RequestParam Map<String,Object> form){
+        String newAvatar=form.get("new_avatar").toString();
+        return ResponseEntity.ok(userInfoService.putUserAvatar(userId,newAvatar));
+    }
 }

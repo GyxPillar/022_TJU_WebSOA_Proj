@@ -27,18 +27,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/users/{userId}/orders/{orderId}/tickets/",
                         "/users/{userId}/tickets/{ticketId}/",
                         "/users/{userId}/validTicket/",
-                        "/users/{userId}/orders/{orderId}",
-                        "/shows/{showId}",
-                        "/users/{userId}/ticket_stall/{ticketStallId}",
-                        "/shows/{showId}",
-                        "/shows",
-                        "/search",
+                        "/users/{userId}/orders/{orderId}/",
+                        "/shows/{showId}/",
+                        "/users/{userId}/ticket_stall/{ticketStallId}/",
+                        "/shows/{showId}/",
+                        "/shows/",
+                        "/search/",
                         "/users/{userId}/tickets/{ticketId}/resale/",
                         "/histrionics/{histrionicsId}/ticket_stall/",
                         "/shows/{showId}/resale/",
                         "/users/{userId}/resale/",
-                        "/users/{userId}/resales/{resaleId}",
-                        "/histrionics/{histrionicsId}/show/"
+                        "/users/{userId}/resales/{resaleId}/",
+                        "/histrionics/{histrionicsId}/show/",
+                        "/locations/",
+                        "/locations/{locationId}/",
+                        "/users/{userId}/tickets/{ticketId}/",
+                        "/locations/{locationId}/shows/",
+                        "/histrionics/{histrionicsId}/location/",
+                        "/histrionics/"
                 ).permitAll()
                 .antMatchers(HttpMethod.OPTIONS).permitAll()
                 .anyRequest().authenticated();
